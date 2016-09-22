@@ -29,3 +29,16 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function ()
         require Config::get('generator.path_api_routes');
 	});
 });
+
+/*
+Route::resource('empleados', 'EmpleadoController');
+Route::get('empleados/{id}/delete', [
+    'as' => 'empleados.delete',
+    'uses' => 'EmpleadoController@destroy',
+]);
+*/
+Route::resource('empleados', 'EmpleadoController');
+Route::get('empleados/{dui}/delete', [
+    'as' => 'empleados.delete',
+    'uses' => 'EmpleadoController@destroy',
+]);
